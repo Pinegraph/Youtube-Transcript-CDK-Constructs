@@ -1,0 +1,10 @@
+{
+  "name": "local-serverless-test-use-only-see-cloud-infrastructure-for-actual-setup",
+  "version": "1.0.0",
+  "description": "Packaged externals for local-serverless-test-use-only-see-cloud-infrastructure-for-actual-setup",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "phin": "^3.6.1"
+  }
+}

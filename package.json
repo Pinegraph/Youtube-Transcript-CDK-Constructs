@@ -1,0 +1,96 @@
+{
+  "name": "@pinegraph/youtube-transcript-cdk-constructs",
+  "scripts": {
+    "build": "tsc && sls webpack && mkdir -p lib/.serverless && cp .serverless/transcript.zip lib/.serverless/transcript.zip",
+    "cdk": "cdk",
+    "serve": "sls offline"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.4",
+    "@types/node": "^14",
+    "jest": "^28.1.2",
+    "jest-junit": "^13",
+    "json-schema": "^0.4.0",
+    "npm-check-updates": "^12",
+    "prettier": "^2.7.1",
+    "standard-version": "^9",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.4",
+    "serverless": "^3.16.0",
+    "serverless-dotenv-plugin": "^4.0.0",
+    "serverless-offline": "^8.5.0",
+    "serverless-webpack": "^5.7.0",
+    "webpack": "^5.72.0",
+    "ts-loader": "^9.2.8",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "main": "lib/index.js",
+  "license": "Apache-2.0",
+  "version": "2.0.22",
+  "jest": {
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.ts?(x)",
+      "<rootDir>/(test|src)/**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "clearMocks": true,
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "clover",
+      "cobertura",
+      "text"
+    ],
+    "coverageDirectory": "coverage",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "watchPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "test-reports"
+        }
+      ]
+    ],
+    "preset": "ts-jest",
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.dev.json"
+      }
+    }
+  },
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.101",
+    "aws-cdk-lib": "^2.30.0",
+    "constructs": "^10.1.43",
+    "phin": "^3.6.1",
+    "prettier": "^2.7.1"
+  },
+  "description": "This package is an AWS CDK construct for hosting a proxy over Youtube's transcript API. This is useful for bypassing same origin policy restrictions.",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pinegraph/Youtube-Transcript-CDK-Constructs.git"
+  },
+  "keywords": [
+    "youtube",
+    "transcript",
+    "subtitles"
+  ],
+  "author": "YoshikiMiki",
+  "bugs": {
+    "url": "https://github.com/Pinegraph/Youtube-Transcript-CDK-Constructs/issues"
+  },
+  "homepage": "https://github.com/Pinegraph/Youtube-Transcript-CDK-Constructs#readme"
+}

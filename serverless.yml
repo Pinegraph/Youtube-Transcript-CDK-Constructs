@@ -1,0 +1,28 @@
+service: local-serverless-test-use-only-see-cloud-infrastructure-for-actual-setup
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+    packager: "npm" # Packager that will be used to package your external modules
+    excludeFiles: src/**/*.test.[t|j]s # Exclude test files
+
+functions:
+  transcript:
+    handler: src/constructs/youtube-transcript-api.handler
+    events:
+      - httpApi:
+          path: /transcript
+          method: GET
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-dotenv-plugin
